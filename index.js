@@ -6,10 +6,24 @@ app.engine('ejs', ejs.renderFile);
 app.use(express.static('public'));
 
 app.get('/', (req, res) => {
-    // index.ejsをレンダリングする
+    const msg =
+        `This is Express-app Top page<br>
+        これはトップページです`;
     res.render('index.ejs', {
         title: 'Index',
-        content: 'This is Express-app Top page',
+        content: msg,
+        link: { href: '/other', text: '※別のページに移動' },
+    });
+});
+
+app.get('/other', (req, res) => {
+    const msg =
+        `This is Express-app Top page<br>
+        これは用意された別のページです`;
+    res.render('index.ejs', {
+        title: 'other',
+        content: msg,
+        link: { href: '/', text: '※トップに戻る' },
     });
 });
 
