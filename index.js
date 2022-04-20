@@ -2,6 +2,13 @@ const express = require('express');
 const ejs = require('ejs');
 const bodyParser = require('body-parser');
 
+const data= {
+    'Taro': 'taro@yamada',
+    'Hanako': 'hanako@flower',
+    'Sachiko': 'sachiko@happy',
+    'Ichiro': 'ichiro@baseball',
+}
+
 const app = express();
 app.engine('ejs', ejs.renderFile);
 app.use(express.static('public'));
@@ -14,6 +21,7 @@ app.get('/', (req, res) => {
     res.render('index.ejs', {
         title: 'Index',
         content: msg,
+        data: data
     });
 });
 

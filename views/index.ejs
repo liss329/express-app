@@ -20,11 +20,13 @@
         <p>
             <%- content %>
         </p>
-        <form action="/" method="post">
-            <p><input type="text" name="message">
-                <input type="submit" value="送信">
-            </p>
-        </form>
+        <p>
+        <table style="width: 85%;">
+            <% for(const key in data){ %>
+                <%- include('data_item', {key:key, val: data[key]}) %>
+                    <% } %>
+        </table>
+        </p>
 
     </div>
 </body>
