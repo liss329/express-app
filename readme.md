@@ -9,7 +9,7 @@ node.js学習用
 
 ### 参照
 - Node.js超入門  
-  - 4.Expressを利用しよう
+  - 4.フレームワーク「Express」を使お！
 
 ## 使い方
 
